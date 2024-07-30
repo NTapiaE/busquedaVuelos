@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Reserva</title>
+    <script>
+        function validarFormulario() {
+            var id_cliente = document.forms["formReserva"]["id_cliente"].value;
+            var id_vuelo = document.forms["formReserva"]["id_vuelo"].value;
+            var id_hotel = document.forms["formReserva"]["id_hotel"].value;
+
+            if (id_cliente == "" || id_vuelo == "" || id_hotel == "") {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Agregar Reserva</h2>
+    <form name="formReserva" action="agregar_reserva.php" onsubmit="return validarFormulario()" method="post">
+        ID Cliente: <input type="number" name="id_cliente"><br>
+        ID Vuelo: <input type="number" name="id_vuelo"><br>
+        ID Hotel: <input type="number" name="id_hotel"><br>
+        <input type="submit" value="Agregar Reserva">
+    </form>
+</body>
+</html>
